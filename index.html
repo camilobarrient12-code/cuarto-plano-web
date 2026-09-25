@@ -322,7 +322,41 @@
     </footer>
 
 </main>
+<div id="interview-page" style="display:none;">
 
+    <button onclick="closeInterview()" class="back-button">
+        ← VOLVER AL ARCHIVO
+    </button>
+
+    <div class="interview-header">
+        <h1 id="interview-name"></h1>
+        <div id="interview-meta"></div>
+    </div>
+
+    <div class="interview-content">
+
+        <img id="interview-image" src="" alt="">
+
+        <div id="interview-caption"></div>
+
+        <div class="video-wrapper">
+            <blockquote
+                id="interview-video"
+                class="instagram-media"
+                data-instgrm-permalink=""
+                data-instgrm-version="14">
+            </blockquote>
+        </div>
+
+    </div>
+
+    <div class="rights">
+        <strong>© CUARTO PLANO</strong>
+        <br>
+        Material realizado por Cuarto Plano. Todos los derechos reservados.
+    </div>
+
+</div>
 <script>
 
 const interviews = {
@@ -380,9 +414,20 @@ function openInterview(id) {
 
     if (!interview) return;
 
-    alert("Abriremos la entrevista de " + interview.name);
+    document.querySelectorAll("main > section").forEach(section => {
+        section.style.display = "none";
+    });
 
+    document.getElementById("interview-page").style.display = "block";
+
+    document.getElementById("interview-name").textContent = interview.name;
+
+    document.getElementById("interview-meta").textContent =
+        interview.country + " · " + interview.year;
+
+    window.scrollTo(0, 0);
 }
+
 
 </script>
 
