@@ -245,7 +245,6 @@
 
     </section>
 
-
 <section id="entrevistas">
 
     <div class="section-title">
@@ -285,6 +284,7 @@
 </section>
 
 
+
     <section id="nosotros">
 
         <div class="section-title">
@@ -292,13 +292,15 @@
         </div>
 
         <p class="about">
-            Cuarto Plano es un medio independiente de Medellín
-            dedicado a documentar la música electrónica y su cultura.
-            <span>Artistas, sellos, festivales, colectivos, ideas
-            y momentos que construyen la escena.</span>
+            Cuarto Plano es un medio de comunicación y colectivo
+            independiente especializado en la música electrónica
+            con base en Colombia, que busca apalancar nuestra
+            escena con creación de contenido cultural de alto
+            impacto en colaboración con artistas, marcas y
+            proyectos nacionales e internacionales.</span>
         </p>
 
-
+    </section>
 
 
     <section id="contacto">
@@ -320,6 +322,69 @@
     </footer>
 
 </main>
+
+<script>
+
+const interviews = {
+
+    "luke-slater": {
+        name: "LUKE SLATER",
+        country: "Reino Unido",
+        year: "2026",
+        image: "IMAGEN_LUKE",
+        caption: "CAPTION_LUKE",
+        link: "https://www.instagram.com/p/DZqdW4buG65/"
+    },
+
+    "tensal": {
+        name: "TENSAL",
+        country: "España",
+        year: "2026",
+        image: "IMAGEN_TENSAL",
+        caption: "CAPTION_TENSAL",
+        link: "https://www.instagram.com/p/DdUODq-MRJf/"
+    },
+
+    "benjamin-damage": {
+        name: "BENJAMIN DAMAGE",
+        country: "Reino Unido",
+        year: "2025",
+        image: "IMAGEN_BENJAMIN",
+        caption: "CAPTION_BENJAMIN",
+        link: "https://www.instagram.com/p/DbowCWHunhx/"
+    },
+
+    "colin-benders": {
+        name: "COLIN BENDERS",
+        country: "Países Bajos",
+        year: "2026",
+        image: "IMAGEN_COLIN",
+        caption: "CAPTION_COLIN",
+        link: "https://www.instagram.com/p/DWhtHXtEfcB/"
+    },
+
+    "setaoc-mass": {
+        name: "SETAOC MASS",
+        country: "Reino Unido",
+        year: "2025",
+        image: "IMAGEN_SETAOC",
+        caption: "CAPTION_SETAOC",
+        link: "https://www.instagram.com/p/DbEkFDnMdGf/"
+    }
+
+};
+
+function openInterview(id) {
+
+    const interview = interviews[id];
+
+    if (!interview) return;
+
+    alert("Abriremos la entrevista de " + interview.name);
+
+}
+
+</script>
 
 </body>
 </html>
