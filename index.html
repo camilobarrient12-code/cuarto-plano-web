@@ -139,29 +139,40 @@ pointer-events: none;
 .hero .meta {
     position: relative;
     z-index: 3;
+    margin-left: 8vw;
+    margin-right: 8vw;
 }
 
-        .hero h1 span {
-            color: #29ED22;
-        }
+.hero h1 {
+    font-family: "Hanson", sans-serif;
+    font-size: clamp(50px, 9vw, 140px);
+    line-height: 0.85;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    max-width: 1000px;
+}
 
-        .intro {
-            max-width: 520px;
-            margin-top: 50px;
-            font-size: 18px;
-            line-height: 1.5;
-            color: #c9c9c3;
-        }
+.hero h1 span {
+    color: #29ED22;
+}
 
-        .meta {
-            margin-top: 60px;
-            display: flex;
-            gap: 50px;
-           font-family: "Cascadia Code", monospace;
-font-weight: 600;
-            font-size: 12px;
-            color: #8c8c86;
-        }
+.hero .intro {
+    max-width: 520px;
+    margin-top: 50px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #c9c9c3;
+}
+
+.hero .meta {
+    margin-top: 60px;
+    display: flex;
+    gap: 50px;
+    font-family: "Cascadia Code", monospace;
+    font-weight: 600;
+    font-size: 12px;
+    color: #8c8c86;
+}
 
         section {
             padding: 100px 0;
