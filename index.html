@@ -517,6 +517,13 @@ function openInterview(id) {
         interview.country + " · " + interview.year;
 document.getElementById("interview-image").src =
     "entrevistas/luke-slater/LUKE_SLATER_RETRATO.jpg";
+
+    fetch("entrevistas/luke-slater/CAPTION.txt")
+    .then(response => response.text())
+    .then(text => {
+        document.getElementById("interview-caption").textContent = text;
+    });
+    
     window.scrollTo(0, 0);
 }
 
