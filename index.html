@@ -97,14 +97,55 @@ font-weight: 600;
             border-bottom: 1px solid #292929;
         }
 
-        .hero h1 {
-            font-family: "Hanson", sans-serif;
-            font-size: clamp(60px, 12vw, 165px);
-            line-height: 0.85;
-            font-weight: 400;
-            letter-spacing: 10px;
-            max-width: 1000px;
-        }
+        .hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #292929;
+    position: relative;
+    overflow: hidden;
+}
+
+        .hero-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-track {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    animation: heroScroll 80s linear infinite;
+}
+
+.hero-track img {
+    width: 420px;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    opacity: 0.22;
+    flex-shrink: 0;
+}
+
+@keyframes heroScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-4200px);
+    }
+}
+
+        .hero h1,
+.hero .intro,
+.hero .meta {
+    position: relative;
+    z-index: 2;
+}
 
         .hero h1 span {
             color: #29ED22;
