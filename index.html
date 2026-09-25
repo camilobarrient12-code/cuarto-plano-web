@@ -267,15 +267,20 @@ transition: color 0.2s ease;
     background: #29ED22;
 }
 
-        .about {
-            max-width: 900px;
-            font-size: clamp(28px, 4vw, 55px);
-            line-height: 1.1;
-        }
+        .about-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1100px;
+    margin-left: auto;
+}
 
-        .about span {
-            color: #8c8c86;
-        }
+.about {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #c9c9c3;
+}
 
         footer {
             padding: 40px 0;
@@ -553,19 +558,30 @@ font-weight: 600;
     <section id="nosotros">
 
         <div class="section-title">
-            02 — QUIÉNES SOMOS
-        </div>
+            <section id="nosotros">
+
+    <div class="section-title">
+        02 — QUIÉNES SOMOS
+    </div>
+
+    <div class="about-columns">
 
         <p class="about">
             Cuarto Plano es un medio de comunicación y colectivo
             independiente especializado en la música electrónica
-            con base en Colombia, que busca apalancar nuestra
-            escena con creación de contenido cultural de alto
-            impacto en colaboración con artistas, marcas y
-            proyectos nacionales e internacionales.</span>
+            con base en Colombia,
         </p>
 
-    </section>
+        <p class="about">
+            que busca apalancar nuestra escena con creación de
+            contenido cultural de alto impacto en colaboración con
+            artistas, marcas y proyectos nacionales e
+            internacionales.
+        </p>
+
+    </div>
+
+</section>
 
 
     <section id="contacto">
