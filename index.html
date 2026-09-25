@@ -220,6 +220,52 @@ font-weight: 600;
             font-size: 13px;
         }
 
+        .interview-search {
+    margin-bottom: 25px;
+}
+
+.interview-search input {
+    width: 100%;
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid #292929;
+    padding: 15px 18px;
+    color: #f1f0eb;
+    font-family: "Cascadia Code", monospace;
+    font-size: 12px;
+    outline: none;
+}
+
+.interview-search input::placeholder {
+    color: #8c8c86;
+}
+
+.interview-search input:focus {
+    border-color: #29ED22;
+}
+
+.interview-list {
+    max-height: 520px;
+    overflow-y: auto;
+    border-bottom: 1px solid #292929;
+}
+
+.interview-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.interview-list::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+.interview-list::-webkit-scrollbar-thumb {
+    background: #292929;
+}
+
+.interview-list::-webkit-scrollbar-thumb:hover {
+    background: #29ED22;
+}
+
         .about {
             max-width: 900px;
             font-size: clamp(28px, 4vw, 55px);
@@ -455,34 +501,47 @@ font-weight: 600;
         01 — ENTREVISTAS
     </div>
 
-    <div class="interview" onclick="openInterview('luke-slater')">
-        <div class="number">001</div>
-        <div class="artist">LUKE SLATER</div>
-        <div class="year">2026</div>
+    <div class="interview-search">
+        <input
+            type="text"
+            id="interview-search"
+            placeholder="BUSCAR ARTISTA"
+            oninput="filterInterviews()"
+        >
     </div>
 
-    <div class="interview" onclick="openInterview('tensal')">
-        <div class="number">002</div>
-        <div class="artist">TENSAL</div>
-        <div class="year">2026</div>
-    </div>
+    <div class="interview-list">
 
-    <div class="interview" onclick="openInterview('benjamin-damage')">
-        <div class="number">003</div>
-        <div class="artist">BENJAMIN DAMAGE</div>
-        <div class="year">2025</div>
-    </div>
+        <div class="interview" onclick="openInterview('luke-slater')">
+            <div class="number">001</div>
+            <div class="artist">LUKE SLATER</div>
+            <div class="year">2026</div>
+        </div>
 
-    <div class="interview" onclick="openInterview('colin-benders')">
-        <div class="number">004</div>
-        <div class="artist">COLIN BENDERS</div>
-        <div class="year">2026</div>
-    </div>
+        <div class="interview" onclick="openInterview('tensal')">
+            <div class="number">002</div>
+            <div class="artist">TENSAL</div>
+            <div class="year">2026</div>
+        </div>
 
-    <div class="interview" onclick="openInterview('setaoc-mass')">
-        <div class="number">005</div>
-        <div class="artist">SETAOC MASS</div>
-        <div class="year">2025</div>
+        <div class="interview" onclick="openInterview('benjamin-damage')">
+            <div class="number">003</div>
+            <div class="artist">BENJAMIN DAMAGE</div>
+            <div class="year">2025</div>
+        </div>
+
+        <div class="interview" onclick="openInterview('colin-benders')">
+            <div class="number">004</div>
+            <div class="artist">COLIN BENDERS</div>
+            <div class="year">2026</div>
+        </div>
+
+        <div class="interview" onclick="openInterview('setaoc-mass')">
+            <div class="number">005</div>
+            <div class="artist">SETAOC MASS</div>
+            <div class="year">2025</div>
+        </div>
+
     </div>
 
 </section>
@@ -653,6 +712,30 @@ setTimeout(() => {
     window.scrollTo(0, 0);
 }
 
+    function filterInterviews() {
+
+    const search = document
+        .getElementById("interview-search")
+        .value
+        .toLowerCase()
+        .trim();
+
+    document.querySelectorAll(".interview-list .interview").forEach(item => {
+
+        const artist = item
+            .querySelector(".artist")
+            .textContent
+            .toLowerCase();
+
+        if (artist.includes(search)) {
+            item.style.display = "grid";
+        } else {
+            item.style.display = "none";
+        }
+
+    });
+}
+    
 function closeInterview() {
 
     document.getElementById("interview-page").style.display = "none";
