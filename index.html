@@ -89,15 +89,7 @@ font-weight: 600;
             padding: 80px 40px;
         }
 
-        .hero {
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border-bottom: 1px solid #292929;
-        }
-
-        .hero {
+       .hero {
     min-height: 70vh;
     display: flex;
     flex-direction: column;
@@ -107,7 +99,7 @@ font-weight: 600;
     overflow: hidden;
 }
 
-        .hero-background {
+.hero-background {
     position: absolute;
     inset: 0;
     overflow: hidden;
@@ -122,9 +114,10 @@ font-weight: 600;
 }
 
 .hero-track img {
-    width: 420px;
     height: 100%;
-    object-fit: cover;
+    width: auto;
+    max-width: none;
+    object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.22;
     flex-shrink: 0;
@@ -136,15 +129,15 @@ font-weight: 600;
     }
 
     to {
-        transform: translateX(-4200px);
+        transform: translateX(-50%);
     }
 }
 
-        .hero h1,
+.hero h1,
 .hero .intro,
 .hero .meta {
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
         .hero h1 span {
