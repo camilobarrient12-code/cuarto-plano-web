@@ -154,7 +154,98 @@
             color: #8c8c86;
             font-size: 12px;
         }
+/* ENTREVISTAS — PÁGINA INDIVIDUAL */
 
+#interview-page {
+    min-height: 100vh;
+    padding: 60px 0 100px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #8c8c86;
+    font-family: monospace;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 80px;
+    padding: 0;
+}
+
+.back-button:hover {
+    color: #b7ff00;
+}
+
+.interview-header {
+    border-bottom: 1px solid #292929;
+    padding-bottom: 35px;
+    margin-bottom: 70px;
+}
+
+.interview-header h1 {
+    font-family: monospace;
+    font-size: clamp(50px, 10vw, 140px);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: -5px;
+}
+
+#interview-meta {
+    margin-top: 20px;
+    font-family: monospace;
+    font-size: 13px;
+    color: #8c8c86;
+    font-weight: 400;
+}
+
+.interview-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#interview-image {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    margin: 0 auto 60px;
+}
+
+#interview-caption {
+    max-width: 700px;
+    margin: 0 auto 80px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #c9c9c3;
+    white-space: pre-line;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto 100px;
+}
+
+.video-wrapper .instagram-media {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+}
+
+.rights {
+    border-top: 1px solid #292929;
+    padding-top: 30px;
+    margin-top: 80px;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #8c8c86;
+}
+
+.rights strong {
+    color: #f1f0eb;
+    font-weight: 400;
+}
         @media (max-width: 700px) {
 
             header {
@@ -428,7 +519,16 @@ function openInterview(id) {
     window.scrollTo(0, 0);
 }
 
+function closeInterview() {
 
+    document.getElementById("interview-page").style.display = "none";
+
+    document.querySelectorAll("main > section").forEach(section => {
+        section.style.display = "";
+    });
+
+    window.scrollTo(0, 0);
+}
 </script>
 
 </body>
