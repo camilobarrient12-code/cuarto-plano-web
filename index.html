@@ -500,12 +500,23 @@ transition: color 0.2s ease;
 }
 
 #interview-meta {
-    margin-top: 20px;
+    margin-top: 18px;
+    padding-left: 35px;
     font-family: "Cascadia Code", monospace;
-font-weight: 600;
-    font-size: 13px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#interview-country {
+    color: #29ED22;
+}
+
+.meta-separator {
     color: #8c8c86;
-    font-weight: 400;
+}
+
+#interview-year {
+    color: #f1f0eb;
 }
 
 .interview-content {
@@ -882,9 +893,11 @@ font-weight: 600;
 
         <h1 id="interview-name"></h1>
 
-        <div id="interview-meta"></div>
-
-    </div>
+ <div id="interview-meta">
+    <span id="interview-country"></span>
+    <span class="meta-separator"> · </span>
+    <span id="interview-year"></span>
+</div>
 
     <div class="interview-grid">
 
@@ -995,8 +1008,11 @@ function openInterview(id) {
     document.getElementById("interview-name").textContent =
         interview.name;
 
-    document.getElementById("interview-meta").textContent =
-        interview.country + " · " + interview.year;
+    document.getElementById("interview-country").textContent =
+    interview.country;
+
+document.getElementById("interview-year").textContent =
+    interview.year;
 
     document.getElementById("interview-image").src =
         interview.image;
