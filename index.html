@@ -343,13 +343,28 @@ transition: color 0.2s ease;
 
 .contact-info {
     display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
+    align-items: flex-start;
+    gap: 100px;
     font-family: "Cascadia Code", monospace;
     font-size: 14px;
     font-weight: 600;
     color: #f1f0eb;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
+}
+
+.email-contact {
+    padding-top: 0;
+}
+
+.email-label {
+    color: #8c8c86;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.email-address {
+    color: #f1f0eb;
+    font-size: 14px;
 }
 
         .whatsapp-label {
@@ -383,10 +398,6 @@ transition: color 0.2s ease;
     color: #f1f0eb;
 }
 
-.email-contact {
-    align-self: flex-start;
-    padding-top: 0;
-}
 
 .social-links {
     display: flex;
@@ -769,22 +780,28 @@ font-weight: 600;
 
     <div class="whatsapp-contact">
 
-    <div class="whatsapp-label">
-        <img src="Imagenes/iconos/whatsapp.png" alt="WhatsApp">
-        <span>WHATSAPP</span>
-    </div>
+        <div class="whatsapp-label">
+            <img src="Imagenes/iconos/whatsapp.png" alt="WhatsApp">
+            <span>WHATSAPP</span>
+        </div>
 
-    <div class="whatsapp-numbers">
-        <div>+57 310 4223367</div>
-        <div>+57 300 7840781</div>
-    </div>
-
-</div>
+        <div class="whatsapp-numbers">
+            <div>+57 310 4223367</div>
+            <div>+57 300 7840781</div>
+        </div>
 
     </div>
 
     <div class="email-contact">
-        cuartoplano4@gmail.com
+
+        <div class="email-label">
+            EMAIL
+        </div>
+
+        <div class="email-address">
+            cuartoplano4@gmail.com
+        </div>
+
     </div>
 
 </div>
