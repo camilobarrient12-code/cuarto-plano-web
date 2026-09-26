@@ -209,14 +209,17 @@ font-weight: 600;
             cursor: pointer;
 transition: color 0.2s ease;
         }
+.artist {
+    font-family: "Hanson", sans-serif;
+    letter-spacing: 0px;
+    font-size: clamp(24px, 4vw, 50px);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
 .artist:hover {
     color: #29ED22;
+    transform: translateY(-3px) scale(1.03);
 }
-        .artist {
-            font-family: "Hanson", sans-serif;
-            letter-spacing: 0px;
-            font-size: clamp(24px, 4vw, 50px);
-        }
 
         .year {
     text-align: right;
