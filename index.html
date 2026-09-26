@@ -322,10 +322,10 @@ transition: color 0.2s ease;
 
         .contact-title {
     font-family: "Hanson", sans-serif;
-    font-size: clamp(50px, 8vw, 130px);
+    font-size: clamp(42px, 6vw, 90px);
     line-height: 0.88;
     color: #f1f0eb;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .contact-title span {
@@ -333,7 +333,7 @@ transition: color 0.2s ease;
 }
 
 .contact-intro {
-    max-width: 600px;
+    max-width: 700px;
     font-family: "Cascadia Code", monospace;
     font-size: 18px;
     line-height: 1.4;
@@ -350,6 +350,41 @@ transition: color 0.2s ease;
     font-weight: 600;
     color: #f1f0eb;
     margin-bottom: 60px;
+}
+
+        .whatsapp-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.whatsapp-label img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.whatsapp-label span {
+    font-family: "Cascadia Code", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: #8c8c86;
+}
+
+.whatsapp-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: "Cascadia Code", monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: #f1f0eb;
+}
+
+.email-contact {
+    align-self: flex-end;
 }
 
 .social-links {
@@ -720,9 +755,9 @@ font-weight: 600;
     </div>
 
     <p class="contact-title">
-        NUESTRA CULTURA<br>
-        LA CONSTRUIMOS TODOS<span>.</span>
-    </p>
+    NUESTRA CULTURA<br>
+    <span>LA CONSTRUIMOS TODOS.</span>
+</p>
 
     <p class="contact-intro">
         Si tienes algo que decir, crear o compartir alrededor de la música electrónica,
@@ -731,19 +766,27 @@ font-weight: 600;
 
     <div class="contact-info">
 
-        <div>
-            +57 310 4223367
-        </div>
+    <div class="whatsapp-contact">
 
-        <div>
-            +57 300 7840781
-        </div>
+    <div class="whatsapp-label">
+        <img src="Imagenes/iconos/whatsapp.png" alt="WhatsApp">
+        <span>WHATSAPP</span>
+    </div>
 
-        <div>
-            cuartoplano4@gmail.com
-        </div>
+    <div class="whatsapp-numbers">
+        <div>+57 310 4223367</div>
+        <div>+57 300 7840781</div>
+    </div>
+
+</div>
 
     </div>
+
+    <div class="email-contact">
+        cuartoplano4@gmail.com
+    </div>
+
+</div>
 
     <div class="social-links">
 
