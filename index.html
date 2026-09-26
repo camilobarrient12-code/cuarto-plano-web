@@ -309,16 +309,20 @@ transition: color 0.2s ease;
 
      .about-columns {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    max-width: 1200px;
+    grid-template-columns: 1fr 1fr 1.1fr;
+    gap: 60px;
+    max-width: 1300px;
     margin-left: 0;
     align-items: center;
     text-align: left;
 }
 
-.about-text {
-    max-width: 550px;
+.about {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1.5;
+    color: #c9c9c3;
+    text-align: left;
 }
 
 .about-image {
@@ -329,9 +333,10 @@ transition: color 0.2s ease;
 
 .about-image img {
     display: block;
-    width: min(100%, 420px);
+    width: min(100%, 500px);
     height: auto;
 }
+        
 .about {
     margin: 0;
     font-size: 25px;
@@ -732,30 +737,24 @@ font-weight: 600;
 
     <div class="about-columns">
 
-    <div class="about-text">
+    <p class="about">
+        Cuarto Plano es un medio de comunicación y colectivo
+        independiente especializado en la música electrónica
+        con base en Colombia,
+    </p>
 
-        <p class="about">
-            Cuarto Plano es un medio de comunicación y colectivo
-            independiente especializado en la música electrónica
-            con base en Colombia,
-        </p>
-
-        <p class="about">
-            que busca apalancar nuestra escena con creación de
-            contenido cultural de alto impacto en colaboración con
-            artistas, marcas y proyectos nacionales e
-            internacionales.
-        </p>
-
-    </div>
+    <p class="about">
+        que busca apalancar nuestra escena con creación de
+        contenido cultural de alto impacto en colaboración con
+        artistas, marcas y proyectos nacionales e
+        internacionales.
+    </p>
 
     <div class="about-image">
         <img src="Imagenes/nosotros/microfono-cuarto-plano.png" alt="Micrófono de Cuarto Plano">
     </div>
 
 </div>
-
-</section>
 
 
 <section id="aliados">
