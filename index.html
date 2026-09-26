@@ -991,16 +991,29 @@ function openInterview(id) {
             document.getElementById("interview-caption").textContent = text;
         });
 
-    document.getElementById("interview-video").setAttribute(
-        "data-instgrm-permalink",
-        interview.link
-    );
+    const videoWrapper = document.querySelector(".video-wrapper");
 
-    setTimeout(() => {
-        if (window.instgrm) {
-            window.instgrm.Embeds.process();
-        }
-    }, 500);
+videoWrapper.innerHTML = "";
+
+const newEmbed = document.createElement("blockquote");
+
+newEmbed.className = "instagram-media";
+newEmbed.setAttribute(
+    "data-instgrm-permalink",
+    interview.link
+);
+newEmbed.setAttribute(
+    "data-instgrm-version",
+    "14"
+);
+
+videoWrapper.appendChild(newEmbed);
+
+setTimeout(() => {
+    if (window.instgrm) {
+        window.instgrm.Embeds.process();
+    }
+}, 500);
 
     window.scrollTo(0, 0);
 }
