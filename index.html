@@ -540,7 +540,7 @@ transition: color 0.2s ease;
     white-space: pre-line;
     padding-top: 120px;
     margin-left: -230px;
-    max-width: 700px;
+    max-width: 600px;
 }
 
 .video-wrapper {
@@ -1035,6 +1035,46 @@ document.getElementById("interview-year").textContent =
         .then(text => {
             document.getElementById("interview-caption").textContent = text;
         });
+
+    const artistLinks = document.getElementById("artist-links");
+
+artistLinks.innerHTML = "";
+
+if (interview.socials) {
+
+    if (interview.socials.instagram) {
+        artistLinks.innerHTML += `
+            <a href="${interview.socials.instagram}" target="_blank">
+                <img src="Imagenes/iconos/instagram.png" alt="Instagram">
+            </a>
+        `;
+    }
+
+    if (interview.socials.facebook) {
+        artistLinks.innerHTML += `
+            <a href="${interview.socials.facebook}" target="_blank">
+                <img src="Imagenes/iconos/facebook.png" alt="Facebook">
+            </a>
+        `;
+    }
+
+    if (interview.socials.youtube) {
+        artistLinks.innerHTML += `
+            <a href="${interview.socials.youtube}" target="_blank">
+                <img src="Imagenes/iconos/youtube.png" alt="YouTube">
+            </a>
+        `;
+    }
+
+    if (interview.socials.spotify) {
+        artistLinks.innerHTML += `
+            <a href="${interview.socials.spotify}" target="_blank">
+                <img src="Imagenes/iconos/spotify.png" alt="Spotify">
+            </a>
+        `;
+    }
+
+}
 
     const videoWrapper = document.querySelector(".video-wrapper");
 
