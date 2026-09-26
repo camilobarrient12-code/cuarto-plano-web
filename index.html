@@ -320,6 +320,59 @@ transition: color 0.2s ease;
     text-align: left;
 }
 
+        .contact-title {
+    font-family: "Hanson", sans-serif;
+    font-size: clamp(50px, 8vw, 130px);
+    line-height: 0.88;
+    color: #f1f0eb;
+    margin-bottom: 50px;
+}
+
+.contact-title span {
+    color: #29ED22;
+}
+
+.contact-intro {
+    max-width: 600px;
+    font-family: "Cascadia Code", monospace;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #c9c9c3;
+    margin-bottom: 50px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    font-family: "Cascadia Code", monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: #f1f0eb;
+    margin-bottom: 60px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    border-top: 1px solid #292929;
+    padding-top: 25px;
+}
+
+.social-links a {
+    color: #8c8c86;
+    text-decoration: none;
+    font-family: "Cascadia Code", monospace;
+    font-size: 12px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #29ED22;
+}
+        
         footer {
             padding: 40px 0;
             display: flex;
@@ -662,15 +715,47 @@ font-weight: 600;
 
     <section id="contacto">
 
-        <div class="section-title">
-            03 — CONTACTO
+    <div class="section-title">
+        04 — CONTACTO
+    </div>
+
+    <p class="contact-title">
+        NUESTRA CULTURA<br>
+        LA CONSTRUIMOS TODOS<span>.</span>
+    </p>
+
+    <p class="contact-intro">
+        Si tienes algo que decir, crear o compartir alrededor de la música electrónica,
+        escríbenos.
+    </p>
+
+    <div class="contact-info">
+
+        <div>
+            +57 310 4223367
         </div>
 
-        <p class="about">
-            HABLEMOS<span>.</span>
-        </p>
+        <div>
+            +57 300 7840781
+        </div>
 
-    </section>
+        <div>
+            cuartoplano4@gmail.com
+        </div>
+
+    </div>
+
+    <div class="social-links">
+
+        <a href="#" target="_blank">INSTAGRAM</a>
+        <a href="#" target="_blank">FACEBOOK</a>
+        <a href="#" target="_blank">TIKTOK</a>
+        <a href="#" target="_blank">YOUTUBE</a>
+        <a href="#" target="_blank">SPOTIFY</a>
+
+    </div>
+
+</section>
 
 
     <footer>
