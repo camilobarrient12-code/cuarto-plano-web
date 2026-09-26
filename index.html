@@ -1326,26 +1326,48 @@ if (interview.socials.bandcamp) {
 
 videoWrapper.innerHTML = "";
 
-const newEmbed = document.createElement("blockquote");
+if (interview.link.includes("youtu.be") || interview.link.includes("youtube.com")) {
 
-newEmbed.className = "instagram-media";
-newEmbed.setAttribute(
-    "data-instgrm-permalink",
-    interview.link
-);
-newEmbed.setAttribute(
-    "data-instgrm-version",
-    "14"
-);
+    const videoId = interview.link.includes("youtu.be")
+        ? interview.link.split("youtu.be/")[1].split("?")[0]
+        : new URL(interview.link).searchParams.get("v");
 
+    const youtubeEmbed = document.createElement("iframe");
 
-videoWrapper.appendChild(newEmbed);
+    youtubeEmbed.src = `https://www.youtube.com/embed/${videoId}`;
+    youtubeEmbed.width = "100%";
+    youtubeEmbed.height = "304";
+    youtubeEmbed.frameBorder = "0";
+    youtubeEmbed.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    youtubeEmbed.allowFullscreen = true;
 
-setTimeout(() => {
-    if (window.instgrm) {
-        window.instgrm.Embeds.process();
-    }
-}, 500);
+    videoWrapper.appendChild(youtubeEmbed);
+
+} else {
+
+    const newEmbed = document.createElement("blockquote");
+
+    newEmbed.className = "instagram-media";
+
+    newEmbed.setAttribute(
+        "data-instgrm-permalink",
+        interview.link
+    );
+
+    newEmbed.setAttribute(
+        "data-instgrm-version",
+        "14"
+    );
+
+    videoWrapper.appendChild(newEmbed);
+
+    setTimeout(() => {
+        if (window.instgrm) {
+            window.instgrm.Embeds.process();
+        }
+    }, 500);
+}
 
     window.scrollTo(0, 0);
 }
