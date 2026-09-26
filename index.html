@@ -1160,6 +1160,21 @@ if (interview.socials) {
     }
 
 }
+    if (interview.socials.soundcloud) {
+    artistLinks.innerHTML += `
+        <a href="${interview.socials.soundcloud}" target="_blank">
+            <img src="Imagenes/iconos/soundcloud.png" alt="SoundCloud">
+        </a>
+    `;
+}
+
+if (interview.socials.bandcamp) {
+    artistLinks.innerHTML += `
+        <a href="${interview.socials.bandcamp}" target="_blank">
+            <img src="Imagenes/iconos/bandcamp.png" alt="Bandcamp">
+        </a>
+    `;
+}
 
     const videoWrapper = document.querySelector(".video-wrapper");
 
