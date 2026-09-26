@@ -69,21 +69,23 @@
         }
 
         nav {
-            display: flex;
-            gap: 30px;
-        }
+    display: flex;
+    gap: 30px;
+}
 
-        nav a {
-            color: #8c8c86;
-            text-decoration: none;
-           font-family: "Cascadia Code", monospace;
-font-weight: 600;
-            font-size: 13px;
-        }
+nav a {
+    color: #8c8c86;
+    text-decoration: none;
+    font-family: "Cascadia Code", monospace;
+    font-weight: 600;
+    font-size: 13px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
 
-        nav a:hover {
-            color: #29ED22;
-        }
+nav a:hover {
+    color: #29ED22;
+    transform: translateY(-3px) scale(1.03);
+}
 
         main {
             padding: 80px 40px;
