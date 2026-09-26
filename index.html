@@ -920,8 +920,8 @@ const interviews = {
         name: "LUKE SLATER",
         country: "Reino Unido",
         year: "2026",
-        image: "IMAGEN_LUKE",
-        caption: "CAPTION_LUKE",
+        image: "entrevistas/luke-slater/LUKE_SLATER_RETRATO.jpg",
+        caption: "entrevistas/luke-slater/LUKE_SLATER_CAPTION.txt",
         link: "https://www.instagram.com/p/DZqdW4buG65/"
     },
 
@@ -929,8 +929,8 @@ const interviews = {
         name: "TENSAL",
         country: "España",
         year: "2026",
-        image: "IMAGEN_TENSAL",
-        caption: "CAPTION_TENSAL",
+        image: "entrevistas/tensal/TENSAL_RETRATO.jpg",
+        caption: "entrevistas/tensal/TENSAL_CAPTION.txt",
         link: "https://www.instagram.com/p/DdUODq-MRJf/"
     },
 
@@ -938,8 +938,8 @@ const interviews = {
         name: "BENJAMIN DAMAGE",
         country: "Reino Unido",
         year: "2025",
-        image: "IMAGEN_BENJAMIN",
-        caption: "CAPTION_BENJAMIN",
+        image: "entrevistas/benjamin-damage/BENJAMIN_DAMAGE_RETRATO.jpg",
+        caption: "entrevistas/benjamin-damage/BENJAMIN_DAMAGE_CAPTION.txt",
         link: "https://www.instagram.com/p/DbowCWHunhx/"
     },
 
@@ -947,8 +947,8 @@ const interviews = {
         name: "COLIN BENDERS",
         country: "Países Bajos",
         year: "2026",
-        image: "IMAGEN_COLIN",
-        caption: "CAPTION_COLIN",
+        image: "entrevistas/colin-benders/COLIN_BENDERS_RETRATO.jpg",
+        caption: "entrevistas/colin-benders/COLIN_BENDERS_CAPTION.txt",
         link: "https://www.instagram.com/p/DWhtHXtEfcB/"
     },
 
@@ -956,8 +956,8 @@ const interviews = {
         name: "SETAOC MASS",
         country: "Reino Unido",
         year: "2025",
-        image: "IMAGEN_SETAOC",
-        caption: "CAPTION_SETAOC",
+        image: "entrevistas/setaoc-mass/SETAOC_MASS_RETRATO.jpg",
+        caption: "entrevistas/setaoc-mass/SETAOC_MASS_CAPTION.txt",
         link: "https://www.instagram.com/p/DbEkFDnMdGf/"
     }
 
@@ -982,9 +982,9 @@ function openInterview(id) {
         interview.country + " · " + interview.year;
 
     document.getElementById("interview-image").src =
-        "entrevistas/luke-slater/LUKE_SLATER_RETRATO.jpg";
+        interview.image;
 
-    fetch("entrevistas/luke-slater/LUKE_SLATER_CAPTION.txt")
+    fetch(interview.caption)
         .then(response => response.text())
         .then(text => {
             document.getElementById("interview-caption").textContent = text;
@@ -995,11 +995,11 @@ function openInterview(id) {
         interview.link
     );
 
-setTimeout(() => {
-    if (window.instgrm) {
-        window.instgrm.Embeds.process();
-    }
-}, 500);
+    setTimeout(() => {
+        if (window.instgrm) {
+            window.instgrm.Embeds.process();
+        }
+    }, 500);
 
     window.scrollTo(0, 0);
 }
