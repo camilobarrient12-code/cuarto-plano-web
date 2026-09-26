@@ -1079,11 +1079,8 @@ document.getElementById("interview-year").textContent =
         interview.image;
 
     fetch(interview.caption)
-    .then(response => response.arrayBuffer())
-    .then(buffer => {
-        const decoder = new TextDecoder("utf-8");
-        const text = decoder.decode(buffer);
-
+    .then(response => response.text())
+    .then(text => {
         document.getElementById("interview-caption").textContent = text;
     });
 
