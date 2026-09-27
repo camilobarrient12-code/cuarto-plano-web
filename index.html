@@ -1343,7 +1343,8 @@ if (interview.link.includes("youtu.be") || interview.link.includes("youtube.com"
 
     youtubeEmbed.src = `https://www.youtube.com/embed/${videoId}`;
     youtubeEmbed.width = "100%";
-    youtubeEmbed.height = "304";
+    youtubeEmbed.style.aspectRatio = "16 / 9";
+    youtubeEmbed.style.height = "auto";
     youtubeEmbed.frameBorder = "0";
     youtubeEmbed.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
