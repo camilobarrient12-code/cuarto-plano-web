@@ -1377,41 +1377,42 @@ function unlockAudio() {
 document.addEventListener("pointerdown", unlockAudio, { once: true });
 document.addEventListener("keydown", unlockAudio, { once: true });
 
+
 function navigationSound() {
+
     if (!audioContext) return;
     if (audioContext.state === "suspended") return;
 
-
-    const oscillator = audio.createOscillator();
-    const gain = audio.createGain();
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
 
     oscillator.type = "sine";
 
     oscillator.frequency.setValueAtTime(
         420,
-        audio.currentTime
+        audioContext.currentTime
     );
 
     oscillator.frequency.exponentialRampToValueAtTime(
         180,
-        audio.currentTime + 0.07
+        audioContext.currentTime + 0.07
     );
 
     gain.gain.setValueAtTime(
         0.035,
-        audio.currentTime
+        audioContext.currentTime
     );
 
     gain.gain.exponentialRampToValueAtTime(
         0.001,
-        audio.currentTime + 0.08
+        audioContext.currentTime + 0.08
     );
 
     oscillator.connect(gain);
-    gain.connect(audio.destination);
+    gain.connect(audioContext.destination);
 
     oscillator.start();
-    oscillator.stop(audio.currentTime + 0.08);
+    oscillator.stop(audioContext.currentTime + 0.08);
 }
 
 
@@ -1425,37 +1426,51 @@ document.querySelectorAll("nav a").forEach(link => {
 
 });
 
-    function artistHoverSound() {
+
+function artistHoverSound() {
+
     if (!audioContext) return;
     if (audioContext.state === "suspended") return;
 
-    const oscillator = audio.createOscillator();
-    const gain = audio.createGain();
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
 
     oscillator.type = "sine";
-    oscillator.frequency.setValueAtTime(760, audio.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(
-        520,
-        audio.currentTime + 0.045
+
+    oscillator.frequency.setValueAtTime(
+        760,
+        audioContext.currentTime
     );
 
-    gain.gain.setValueAtTime(0.018, audio.currentTime);
+    oscillator.frequency.exponentialRampToValueAtTime(
+        520,
+        audioContext.currentTime + 0.045
+    );
+
+    gain.gain.setValueAtTime(
+        0.018,
+        audioContext.currentTime
+    );
+
     gain.gain.exponentialRampToValueAtTime(
         0.001,
-        audio.currentTime + 0.05
+        audioContext.currentTime + 0.05
     );
 
     oscillator.connect(gain);
-    gain.connect(audio.destination);
+    gain.connect(audioContext.destination);
 
     oscillator.start();
-    oscillator.stop(audio.currentTime + 0.05);
+    oscillator.stop(audioContext.currentTime + 0.05);
 }
 
+
 document.querySelectorAll(".interview .artist").forEach(artist => {
+
     artist.addEventListener("mouseenter", () => {
         artistHoverSound();
     });
+
 });
 
 function openInterview(id) {
