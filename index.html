@@ -1633,11 +1633,11 @@ if (interview.link.includes("youtu.be") || interview.link.includes("youtube.com"
     window.scrollTo(0, 0);
 }
 
-    function filterInterviews() {
-
-        function sortInterviewsAZ() {
+    function sortInterviewsAZ() {
 
     const list = document.querySelector(".interview-list");
+
+    if (!list) return;
 
     const interviews = Array.from(
         list.querySelectorAll(".interview")
@@ -1648,27 +1648,35 @@ if (interview.link.includes("youtu.be") || interview.link.includes("youtube.com"
         const artistA = a
             .querySelector(".artist")
             .textContent
-            .trim()
-            .toLowerCase();
+            .trim();
 
         const artistB = b
             .querySelector(".artist")
             .textContent
-            .trim()
-            .toLowerCase();
+            .trim();
 
-        return artistA.localeCompare(artistB);
+        return artistA.localeCompare(
+            artistB,
+            "es",
+            { sensitivity: "base" }
+        );
+
     });
 
     interviews.forEach(interview => {
         list.appendChild(interview);
     });
 }
-        document.querySelector(".filter-sort").addEventListener("click", () => {
+
+
+document.querySelector(".filter-sort").addEventListener("click", () => {
 
     sortInterviewsAZ();
 
 });
+
+
+function filterInterviews() {
 
     const search = document
         .getElementById("interview-search")
@@ -1690,6 +1698,7 @@ if (interview.link.includes("youtu.be") || interview.link.includes("youtube.com"
         }
 
     });
+
 }
     
 function closeInterview() {
