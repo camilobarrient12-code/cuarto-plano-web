@@ -1635,6 +1635,41 @@ if (interview.link.includes("youtu.be") || interview.link.includes("youtube.com"
 
     function filterInterviews() {
 
+        function sortInterviewsAZ() {
+
+    const list = document.querySelector(".interview-list");
+
+    const interviews = Array.from(
+        list.querySelectorAll(".interview")
+    );
+
+    interviews.sort((a, b) => {
+
+        const artistA = a
+            .querySelector(".artist")
+            .textContent
+            .trim()
+            .toLowerCase();
+
+        const artistB = b
+            .querySelector(".artist")
+            .textContent
+            .trim()
+            .toLowerCase();
+
+        return artistA.localeCompare(artistB);
+    });
+
+    interviews.forEach(interview => {
+        list.appendChild(interview);
+    });
+}
+        document.querySelector(".filter-sort").addEventListener("click", () => {
+
+    sortInterviewsAZ();
+
+});
+
     const search = document
         .getElementById("interview-search")
         .value
