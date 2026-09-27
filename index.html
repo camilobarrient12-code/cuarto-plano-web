@@ -1706,6 +1706,14 @@ document.querySelector(".filter-sort").addEventListener("click", () => {
 
 });
 
+    document
+    .getElementById("year-filter")
+    .addEventListener("change", () => {
+
+        filterInterviews();
+
+    });
+
 
 function filterInterviews() {
 
@@ -1715,6 +1723,10 @@ function filterInterviews() {
         .toLowerCase()
         .trim();
 
+    const year = document
+        .getElementById("year-filter")
+        .value;
+
     document.querySelectorAll(".interview-list .interview").forEach(item => {
 
         const artist = item
@@ -1722,7 +1734,18 @@ function filterInterviews() {
             .textContent
             .toLowerCase();
 
-        if (artist.includes(search)) {
+        const interviewYear = item
+            .querySelector(".year")
+            .textContent
+            .trim();
+
+        const matchesSearch = artist.includes(search);
+
+        const matchesYear =
+            year === "all" ||
+            interviewYear === year;
+
+        if (matchesSearch && matchesYear) {
             item.style.display = "grid";
         } else {
             item.style.display = "none";
