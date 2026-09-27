@@ -1283,7 +1283,60 @@ const interviews = {
 
 };
 
+    function navigationSound() {
+
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+
+    if (!AudioContext) return;
+
+    const audio = new AudioContext();
+
+    const oscillator = audio.createOscillator();
+    const gain = audio.createGain();
+
+    oscillator.type = "sine";
+
+    oscillator.frequency.setValueAtTime(
+        420,
+        audio.currentTime
+    );
+
+    oscillator.frequency.exponentialRampToValueAtTime(
+        180,
+        audio.currentTime + 0.07
+    );
+
+    gain.gain.setValueAtTime(
+        0.035,
+        audio.currentTime
+    );
+
+    gain.gain.exponentialRampToValueAtTime(
+        0.001,
+        audio.currentTime + 0.08
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audio.destination);
+
+    oscillator.start();
+    oscillator.stop(audio.currentTime + 0.08);
+}
+
+
+/* SONIDO DEL HEADER */
+
+document.querySelectorAll("nav a").forEach(link => {
+
+    link.addEventListener("click", () => {
+        navigationSound();
+    });
+
+});
+
 function openInterview(id) {
+
+    navigationSound();
 
     const interview = interviews[id];
 
@@ -1478,6 +1531,8 @@ if (interview.link.includes("youtu.be") || interview.link.includes("youtube.com"
 }
     
 function closeInterview() {
+
+    navigationSound();
 
     document.getElementById("interview-page").style.display = "none";
 
