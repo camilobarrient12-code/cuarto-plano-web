@@ -390,6 +390,16 @@ transition: color 0.2s ease;
     font-size: 14px;
 }
 
+.email-address a {
+    color: #f1f0eb;
+    text-decoration: none;
+}
+
+.email-address a:hover {
+    color: #29ED22;
+    text-decoration: none;
+}
+
         .whatsapp-label {
     display: flex;
     align-items: center;
@@ -470,18 +480,23 @@ transition: color 0.2s ease;
 }
 
 .back-button {
-    background: none;
+    background: #29ED22;
     border: none;
-    color: #29ED22;
-    font-family: monospace;
+    color: #000000;
+    font-family: "Cascadia Code", monospace;
     font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
     margin-bottom: 30px;
-    padding: 0;
+    padding: 10px 14px;
+    display: inline-block;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .back-button:hover {
-    color: #29ED22;
+    background: #f1f0eb;
+    color: #000000;
+    transform: translateY(-2px);
 }
 
 .interview- {
