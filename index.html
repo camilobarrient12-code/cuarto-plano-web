@@ -1633,7 +1633,10 @@ if (interview.link.includes("youtu.be") || interview.link.includes("youtube.com"
     window.scrollTo(0, 0);
 }
 
-    function sortInterviewsAZ() {
+    let azActive = false;
+let originalInterviewOrder = [];
+
+function sortInterviewsAZ() {
 
     const list = document.querySelector(".interview-list");
 
@@ -1643,29 +1646,57 @@ if (interview.link.includes("youtu.be") || interview.link.includes("youtube.com"
         list.querySelectorAll(".interview")
     );
 
-    interviews.sort((a, b) => {
+    const button = document.querySelector(".filter-sort");
 
-        const artistA = a
-            .querySelector(".artist")
-            .textContent
-            .trim();
+    // Guardar el orden original la primera vez
+    if (originalInterviewOrder.length === 0) {
+        originalInterviewOrder = [...interviews];
+    }
 
-        const artistB = b
-            .querySelector(".artist")
-            .textContent
-            .trim();
+    // Si A/Z está apagado → ordenar A/Z
+    if (!azActive) {
 
-        return artistA.localeCompare(
-            artistB,
-            "es",
-            { sensitivity: "base" }
-        );
+        interviews.sort((a, b) => {
 
-    });
+            const artistA = a
+                .querySelector(".artist")
+                .textContent
+                .trim();
 
-    interviews.forEach(interview => {
-        list.appendChild(interview);
-    });
+            const artistB = b
+                .querySelector(".artist")
+                .textContent
+                .trim();
+
+            return artistA.localeCompare(
+                artistB,
+                "es",
+                { sensitivity: "base" }
+            );
+
+        });
+
+        interviews.forEach(interview => {
+            list.appendChild(interview);
+        });
+
+        azActive = true;
+        button.classList.add("active");
+
+    } 
+    
+    // Si A/Z está prendido → volver al orden original
+    else {
+
+        originalInterviewOrder.forEach(interview => {
+            list.appendChild(interview);
+        });
+
+        azActive = false;
+        button.classList.remove("active");
+
+    }
+
 }
 
 
