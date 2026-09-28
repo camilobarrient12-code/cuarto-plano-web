@@ -1099,9 +1099,11 @@ transition: color 0.2s ease;
 
 </section>
 
+    <section class="home-banner-section">
     <div class="home-banner">
         <img src="Imagenes/banner/banner02.png" alt="Cuarto Plano">
     </div>
+</section>
 
     <div id="interview-page" style="display:none;">
 
@@ -1498,8 +1500,10 @@ function openInterview(id) {
     if (!interview) return;
 
     document.querySelectorAll("main > section").forEach(section => {
-        section.style.display = "none";
-    });
+    section.style.display = "none";
+});
+
+document.querySelector(".home-banner-section").style.display = "none";
 
     document.getElementById("interview-page").style.display = "block";
 
@@ -1790,8 +1794,10 @@ function closeInterview() {
     document.getElementById("interview-page").style.display = "none";
 
     document.querySelectorAll("main > section").forEach(section => {
-        section.style.display = "";
-    });
+    section.style.display = "";
+});
+
+document.querySelector(".home-banner-section").style.display = "";
 
     window.scrollTo(0, 0);
 }
